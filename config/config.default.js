@@ -10,28 +10,30 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {
-  };
+  const config = exports = {};
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1564023036699_1263';
+  config.keys = appInfo.name + '_1574846318385_3443';
 
   // add your middleware config here
-  config.middleware = ['jwt', 'errorHandler'];
-  config.jwt = {
-    secret: 'egg-api-jwt',
-    enable: true,
-    ignore: ['/api/login', '/api/register'], // 哪些请求不需要认证
-  }
-  config.mongoose = {
-    client: {
-      url: 'mongodb://admin:123456@127.0.0.1:27017/admin', options: {},
-    },
+  config.middleware = [];
+
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    database: 'blog',
+    username: 'root',
+    password: '123456',
+    underscored: false,
+    timezone: '+08:00',
+    // logging: (e,b) => {
+    //   console.log(e,b)
+    // }
   };
   config.security = {
     csrf: {
-      headerName: 'authorization',// 自定义请求头
-      ignore: ['/api/login', '/api/register']
+      enable: false
     }
   }
   // add your user config here

@@ -21,7 +21,6 @@ module.exports = {
    */
   handlerDate(date) {
     let time = new Date(date)
-    let a = new Date(time.setHours(time.getHours()))
     return new Date(time.setHours(time.getHours()))
   }
 }
