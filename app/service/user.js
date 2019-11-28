@@ -68,39 +68,26 @@ class UserService extends Service {
     const { ctx } = this
     let res
     const result = await ctx.model.User.findOne({
-<<<<<<< HEAD
-      username: userInfo.username
-=======
       where: {
         username: {
           [this.op.eq]: userInfo.username
         }
       }
->>>>>>> 初步完成后台
     })
     if (result) {
       // 用户已经被注册
       res = ctx.helper.returnObj(-1, '用户已经被注册');
     } else {
       // 注册
-<<<<<<< HEAD
-      userInfo.createTime = ctx.helper.handlerDate(new Date())
-      const user = new ctx.model.User(userInfo)
-      await user.save()
-      // await ctx.model.User.save(userInfo)
-=======
       userInfo.createTime = new Date()
       const user = await ctx.model.User.create(userInfo)
       if (userInfo.avatar) {
         await ctx.model.Resource.create({ path: userInfo.avatar, userId: user.id, createTime: new Date() })
       }
->>>>>>> 初步完成后台
       res = ctx.helper.returnObj(0, '注册成功');
     }
     return res
   }
-<<<<<<< HEAD
-=======
   async upload(stream) {
     const filename = Date.now() + path
       .extname(stream.filename)
@@ -127,6 +114,5 @@ class UserService extends Service {
     await user.destroy()
     return ctx.helper.returnObj(0, '删除成功');
   }
->>>>>>> 初步完成后台
 }
 module.exports = UserService
