@@ -24,9 +24,9 @@ INSERT INTO `role_menus` VALUES (17, 12, 2);
 INSERT INTO `role_menus` VALUES (18, 6, 2);
 INSERT INTO `role_menus` VALUES (19, 11, 2);
 
-INSERT INTO `roles` VALUES (2, '超级管理员', '2019-9-19 11:54:54', '');
-INSERT INTO `roles` VALUES (3, '管理员', '2019-9-19 11:55:09', '');
-INSERT INTO `roles` VALUES (4, '普通用户', '2019-9-19 11:55:17', '');
+INSERT INTO `roles` VALUES (2, '超级管理员', '','2019-9-19 11:54:54');
+INSERT INTO `roles` VALUES (3, '管理员','','2019-9-19 11:55:09');
+INSERT INTO `roles` VALUES (4, '普通用户','','2019-9-19 11:55:17');
 
 INSERT INTO `tags` VALUES (1, 'Vue', '2019-11-28 14:54:51');
 INSERT INTO `tags` VALUES (2, 'React', '2019-11-28 14:54:58');
